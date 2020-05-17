@@ -1,7 +1,7 @@
-#Project Title
+<h1>Project Title</h1>
 CyberSecTNT
 
-##What is CyberSecTNT 
+<h2>What is CyberSecTNT </h2>
 CyberSecTNT is a game with the aim of helping non-technical users
 get a general idea of how the security in a digital environment can
 be easily breached. Since the application is aimed at non-technical
@@ -11,38 +11,40 @@ With how the internet is getting more integrated with our lives by
 the day it is crucial for people to get educated on how to keep their
 data safe and that is the aim of our application. 
 
-##Android 
+<h2>Android </h2>
 Currently the application is developed only for Android devices.
-###Backend:
+
+<h3>Backend:</h3>
 * Android Studio 
 * Java
 * Firebase-Firestore
 * Javascript
-###Front End
+
+<h3>Front End</h3>
 * XML
 
-##Web
+<h2>Web</h2>
 For the website we have made a landing page and an admin panel for CRUD commands
-###Backend:
+<h3>Backend:</h3>
 * Retool
 * PHP
 * Javascript
-###Front End
+<h3>Front End</h3>
 * HTML
 * CSS
 * Bootstrap
 
-##Team
-###Abdulaziz Karam - Team Leader - Application Developer
+<h2>Team</h2>
+<h3> Abdulaziz Karam - Team Leader - Application Developer</h3>
 S00035621@auk.edu.kw
 Android development / Database / Android development / Database / Testing
-### Mohammad Masoud - Application Developer
+<h3> Mohammad Masoud - Application Developer</h3>
 S00034706@auk.edu.kw
 Android Development / Testing / UI Design
-### Anas El-Ghabra - Application Developer
+<h3> Anas El-Ghabra - Application Developer</h3>
 S00042531@auk.edu.kw
 Android development / Testing / Database / Video editing
-### AbdulHameed Salama - Website Developer
+<h3> AbdulHameed Salama - Website Developer</h3>
 S00042531@auk.edu.kw
 Website development & Application testing
 
