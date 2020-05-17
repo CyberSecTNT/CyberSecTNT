@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/LogMenu"
+        android:icon="@drawable/log_icon"
+        android:title="" />
+    <!--        android:title="Log" />-->
+
+    <item
+        android:id="@+id/ScanMenu"
+        android:icon="@drawable/scan_icon"
+        android:title="" />
+    <!--        android:title="Scan" />-->
+
+
+    <item
+        android:id="@+id/ATKMenu"
+        android:icon="@drawable/atk_icon"
+        android:title="" />
+    <!--        android:title="Attack" />-->
+
+
+    <item
+        android:id="@+id/ToolsMenu"
+        android:icon="@drawable/tools_icon"
+        android:title="" />
+    <!--        android:title="Tools" />-->
+
+
+    <item
+        android:id="@+id/BankAccountMenu"
+        android:icon="@drawable/bank_account_icon"
+        android:title="" />
+    <!--        android:title="Bank" />-->
+
+</menu>

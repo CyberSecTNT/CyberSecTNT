@@ -1,0 +1,57 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:windowSoftInputMode">adjustNothing</item>
+<!--        <item name="android:windowAnimationStyle">@style/WindowAnimationStyle</item>-->
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="actionBarSize">70dp</item>
+    </style>
+
+    <style name="AppThemeNoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorPrimary</item>
+        <item name="android:windowSoftInputMode">adjustNothing</item>
+<!--        <item name="android:windowAnimationStyle">@style/WindowAnimationStyle</item>-->
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">false</item>
+
+    </style>
+
+    <style name="ButtonMaterial" parent="Widget.MaterialComponents.Button.UnelevatedButton">
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="backgroundTint">@color/button_selector</item>
+    </style>
+
+    <style name="ButtonMaterialTextOnly" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textSize">20sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="elevation">0dp</item>
+    </style>
+
+    <style name="TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:textColorHint">@color/colorWhite</item>
+        <item name="hintTextColor">@color/colorWhite</item>
+        <item name="boxStrokeColor">@color/colorWhite</item>
+        <item name="boxStrokeWidth">2dp</item>
+        <item name="editTextColor">@color/colorWhite</item>
+    </style>
+
+<!--    <style name="WindowAnimationStyle">-->
+<!--        <item name="android:windowEnterAnimation">@android:anim/fade_in</item>-->
+<!--        <item name="android:windowExitAnimation">@android:anim/fade_out</item>-->
+<!--    </style>-->
+</resources>

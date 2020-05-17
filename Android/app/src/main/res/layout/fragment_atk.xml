@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cybersectnt.fragments.ATKFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerViewToViewPendingAndCompleteAttacks"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/row_pending_attack" />
+
+    <TextView
+        android:id="@+id/TextViewToShowNoItems"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Nothing to show"
+        android:textSize="50sp"
+        android:visibility="gone"
+        tools:listitem="@layout/row_pending_attack" />
+
+</FrameLayout>

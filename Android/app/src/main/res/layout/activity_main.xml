@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cybersectnt.activities.MainActivity">
+
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/ViewPagerForTheFragments"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation"
+        android:layout_below="@id/topBar"/>
+
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_weight="7"
+        android:background="@color/colorPrimary"
+        android:padding="10dp">
+
+        <ImageButton
+            android:id="@+id/ButtonForSideNavigationBar"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:scaleType="centerInside"
+            android:src="@drawable/side_menu_icon"
+            android:tint="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/TextViewToCurrentPage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:layout_weight="4"
+            android:gravity="center"
+            android:text="UserID"
+            android:textColor="@color/colorWhite"
+            android:textSize="22sp" />
+
+
+        <ImageButton
+            android:id="@+id/ButtonForMailBoxOrUploadSpyware"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:background="@null"
+            android:onClick="MoveToMailBoxOrUploadSpyware"
+            android:scaleType="centerInside"
+            android:src="@drawable/mail"
+            android:tint="@color/colorWhite" />
+    </LinearLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        app:itemIconTint="@color/selector_color_for_bottom_navigation_bar"
+        app:itemTextColor="@color/selector_color_for_bottom_navigation_bar"
+        app:menu="@menu/bottom_navigation_bar_menu" />
+
+
+</RelativeLayout>

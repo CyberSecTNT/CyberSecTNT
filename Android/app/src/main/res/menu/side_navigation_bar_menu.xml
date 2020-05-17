@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ScoreboardMenu"
+        android:title="Scoreboard" />
+    <item
+        android:id="@+id/AntiVirusMenu"
+        android:title="AntiVirus" />
+    <item
+        android:id="@+id/TasksMenu"
+        android:title="Tasks" />
+    <item
+        android:id="@+id/ScenariosMenu"
+        android:title="Scenarios" />
+
+    <item
+        android:id="@+id/ProfileMenu"
+        android:title="Profile" />
+</menu>

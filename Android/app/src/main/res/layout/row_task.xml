@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/ImageViewToShowTaskIcon"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/antivirus_icon" />
+
+    <TextView
+        android:id="@+id/TextViewToShowTaskTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_marginStart="10dp"
+        android:layout_toRightOf="@id/ImageViewToShowTaskIcon"
+        android:textSize="22sp"
+        tools:text="Title" />
+
+    <TextView
+        android:id="@+id/TextViewToTaskSubTitle"
+        android:layout_width="251dp"
+        android:layout_height="44dp"
+        android:layout_below="@id/TextViewToShowTaskTitle"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/ImageViewToShowTaskIcon"
+        android:textSize="14sp"
+        tools:text="sub title" />
+
+    <ProgressBar
+        android:id="@+id/ProgressBarToVisualizeTaskProgressLeft"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/TextViewToTaskSubTitle"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@id/ImageViewToShowTaskIcon" />
+
+    <ImageView
+        android:layout_alignParentTop="true"
+        android:id="@+id/ImageViewToShowCompleted"
+        android:layout_width="24dp"
+        android:visibility="gone"
+        android:layout_height="24dp"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/done_icon" />
+
+</RelativeLayout>

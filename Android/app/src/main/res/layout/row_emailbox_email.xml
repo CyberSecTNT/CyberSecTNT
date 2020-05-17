@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_mail_box"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/TextViewToShowEmailTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hot Offer" />
+
+
+    <!--    limit = 120-->
+    <TextView
+        android:id="@+id/TextViewToShowEmailContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You have won 3000 resources points bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla ..." />
+</LinearLayout>

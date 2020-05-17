@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    tools:showIn="@layout/fragment_tools"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/ImageViewToShowToolIcon"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/tools" />
+
+    <TextView
+        android:id="@+id/TextViewToToolName"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Hacking Tools"
+        android:gravity="center"
+        android:textSize="16sp"
+        />
+
+    <TextView
+        android:id="@+id/TextViewToToolLevel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2"
+        android:textSize="20sp" />
+
+    <Button
+        style="@style/ButtonMaterial"
+        android:id="@+id/ButtonForUpgradeTool"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Upgrade\n20k" />
+</LinearLayout>

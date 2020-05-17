@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@color/colorPrimary"
+    android:gravity="center"
+    android:paddingTop="30dp">
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="13dp"
+        app:srcCompat="@drawable/logo_white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="13dp"
+        android:layout_toRightOf="@id/imageView"
+        android:orientation="vertical"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/TextViewToShowUserName"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="AziKar24"
+            android:textColor="@color/colorWhite" />
+
+        <TextView
+            android:id="@+id/TextViewToShowUserLevel"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Level 2"
+            android:textColor="@color/colorWhite" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/ProgressBarToVisualizeLevel"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/colorWhite"
+        android:max="100"
+        android:padding="5dp"
+        android:progress="90"
+        android:progressTint="@color/colorWhite" />
+
+
+</RelativeLayout>
+
