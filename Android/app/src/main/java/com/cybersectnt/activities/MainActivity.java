@@ -223,17 +223,19 @@ public class MainActivity extends AppCompatActivity
                         });
                     }
 
-                    for (TaskListData data : globalVars.getAllAvailableTasks()) {
-                        String query = data.getQuery();
-                        String str;
-                        if (query.contains("UserTools_Upgrade")) {
-                            query = query.substring(0, query.indexOf("_"));
-                            str = documentSnapshot.get("UserTools." + query) + "";
-                        } else {
-                            str = documentSnapshot.get("AchievementsData." + query) + "";
-                        }
-                        if (!str.equals("null")) {
-                            data.setQueryResult(Integer.parseInt(str));
+                    if (globalVars.isLocal()) {
+                        for (TaskListData data : globalVars.getAllAvailableTasks()) {
+                            String query = data.getQuery();
+                            String str;
+                            if (query.contains("UserTools_Upgrade")) {
+                                query = query.substring(0, query.indexOf("_"));
+                                str = documentSnapshot.get("UserTools." + query) + "";
+                            } else {
+                                str = documentSnapshot.get("AchievementsData." + query) + "";
+                            }
+                            if (!str.equals("null")) {
+                                data.setQueryResult(Integer.parseInt(str));
+                            }
                         }
                     }
                     globalVars.setUserPoints(points);
@@ -272,7 +274,7 @@ public class MainActivity extends AppCompatActivity
                                 data.setState(state);
                             }
                             data.setUserName(document.getDocument().get("UserName") + "");
-                            if (!data.getUserID().equals(globalVars.getUserID()) || globalVars.getPendingAttacksArrayList().indexOf(data) == -1) {
+                            if (!data.getUserID().equals(globalVars.getUserID()) && globalVars.getPendingAttacksArrayList().indexOf(data) == -1) {
                                 globalVars.getPendingAttacksArrayList().add(data);
                                 globalVars.getPendingAttacksHashMap().put(data.getUserID(), Boolean.TRUE);
                             }

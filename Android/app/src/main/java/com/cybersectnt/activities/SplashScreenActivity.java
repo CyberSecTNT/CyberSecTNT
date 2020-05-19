@@ -107,6 +107,7 @@ public class SplashScreenActivity extends AppCompatActivity {
                                         globalVars.getAchievementsCollection().get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                                             @Override
                                             public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
+                                                globalVars.getAllAvailableTasks().clear();
                                                 for (DocumentSnapshot doc : queryDocumentSnapshots) {
                                                     TaskListData data = new TaskListData();
                                                     data.setTitle(doc.get("Title") + "");

@@ -17,6 +17,7 @@ import com.cybersectnt.cybersectntdemo1.R;
 import com.cybersectnt.globalVars;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.SetOptions;
 
 import java.util.HashMap;
@@ -54,9 +55,9 @@ public class LogFragment extends Fragment {
      */
     public void loadDB() {
         if (LogEditText != null) {
-            if(globalVars.isLocal()){
+            if (globalVars.isLocal()) {
                 LogEditText.setText(globalVars.getLog());
-            } else{
+            } else {
                 LogEditText.setText(globalVars.getTargetLog());
             }
         }
@@ -69,14 +70,18 @@ public class LogFragment extends Fragment {
         HashMap<String, String> data = new HashMap<>();
         data.put("Log", LogEditText.getText().toString());
         String CurrentID = globalVars.getUserID();
-        if(!globalVars.isLocal()){
+        if (!globalVars.isLocal()) {
             CurrentID = globalVars.getTargetID();
         }
+        final String finalCurrentID = CurrentID;
         globalVars.getUserDocument(CurrentID).set(data, SetOptions.merge()).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                     Toast.makeText(getContext(), "Success", Toast.LENGTH_SHORT).show();
+                    if (globalVars.isLocal() && globalVars.getLog().trim().length() == 0) {
+                        globalVars.getUserDocument(globalVars.getUserID()).update("AchievementsData.Cleared_Log", FieldValue.increment(1));
+                    }
                 } else {
                     Toast.makeText(getContext(), "Failed", Toast.LENGTH_SHORT).show();
                 }

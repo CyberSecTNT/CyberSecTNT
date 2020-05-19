@@ -241,6 +241,7 @@ public class SocialEngineeringActivity extends AppCompatActivity {
             globalVars.getUserDocument(globalVars.getUserID()).update("AchievementsData.Social_Engineering_Used", FieldValue.increment(1));
             long points = globalVars.getMyToolsLevel().get("SocialEngineeringLevel") * 50;
             globalVars.getUserDocument(globalVars.getUserID()).update("UserPoints", FieldValue.increment(points));
+            globalVars.getUserDocument(globalVars.getUserID()).update("AchievementsData.Bank_Access_Users", FieldValue.increment(1));
             Intent returnIntent = new Intent();
             returnIntent.putExtra("result", true);
             setResult(Activity.RESULT_OK, returnIntent);
@@ -257,17 +258,17 @@ public class SocialEngineeringActivity extends AppCompatActivity {
         ArrayList<String> shuffle = new ArrayList<>();
         for (int i = 0; i < AllInformationArrayList.size(); i++) {
             shuffle.add(AllInformationArrayList.get(i).getInformation());
-
         }
         Collections.shuffle(shuffle);
         String passPhrase = "";
-
+        String passPhrase2 = "";
         for (int i = 0; i < formula; i++) {
             String word = shuffle.get(i).replace(" ", "");
             passPhrase += word;
+            passPhrase2 +=  " " + word;
         }
         PassPhrase = passPhrase.toLowerCase();
-        Log.d("Password", PassPhrase);
+        Log.d("Password", passPhrase2);
         HintTextView.setText("Hint: " + formula + " Words");
     }
 

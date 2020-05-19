@@ -229,6 +229,7 @@ public class globalVars {
 
     /**
      * changing the user bank account
+     *
      * @param userBankAccountPending
      */
     public static void setUserBankAccountPending(int userBankAccountPending) {
@@ -251,6 +252,7 @@ public class globalVars {
 
     /**
      * This method is used to change the username
+     *
      * @param userName
      */
     public static void setUserName(String userName) {
@@ -259,6 +261,7 @@ public class globalVars {
 
     /**
      * This method is used to change the points for the user
+     *
      * @param userPoints
      */
     public static void setUserPoints(int userPoints) {
@@ -360,6 +363,7 @@ public class globalVars {
 
     /**
      * his method allows the user to go to the main activity
+     *
      * @param baseContext
      */
     public static void moveToMainActivityFresh(Context baseContext) {
@@ -371,6 +375,7 @@ public class globalVars {
 
     /**
      * Check if an edit text is empty and returns a boolean
+     *
      * @param editText
      */
     public static boolean isEmptyEditText(EditText editText) {
@@ -379,6 +384,7 @@ public class globalVars {
 
     /**
      * This method converts the text inside an edit to text to a string
+     *
      * @param editText
      */
     public static String getEditTextString(EditText editText) {
@@ -386,9 +392,9 @@ public class globalVars {
     }
 
 
-
     /**
      * This method checks if an input is empty
+     *
      * @param editText
      */
     public static boolean isEmptyTextInputLayout(TextInputLayout editText) {
@@ -397,7 +403,8 @@ public class globalVars {
 
 
     /**
-     *  This method to retrieve the text inside an edit text
+     * This method to retrieve the text inside an edit text
+     *
      * @param editText
      */
     public static String getTextInputLayoutString(TextInputLayout editText) {
@@ -430,23 +437,22 @@ public class globalVars {
 
     /**
      * This method is used to update the log
+     *
      * @param log
      * @param ID
      */
     public static void updateLog(String log, String ID) {
 
-        if(ID.equals(TargetID)){
+        if (ID.equals(TargetID)) {
             log = log + "\n" + TargetLog;
             TargetLog = log;
-        } else{
+        } else {
             log = log + "\n" + getLog();
             setLog(log);
         }
         getUserDocument(ID).update("Log", log.trim());
-        if (ID.equals(getUserID()) && Log.length() == 0) {
-            globalVars.getUserDocument(getUserID()).update("AchievementsData.Cleared_Log", FieldValue.increment(1));
-        }
     }
+
 
     /*
     This method returns the log
@@ -458,6 +464,7 @@ public class globalVars {
 
     /**
      * This method will allow the user to send an email which requires the email to be sent to and the subject
+     *
      * @param Subject, To
      * @return sends an email
      */

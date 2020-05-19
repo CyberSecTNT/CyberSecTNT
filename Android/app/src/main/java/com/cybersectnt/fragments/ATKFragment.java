@@ -49,6 +49,7 @@ public class ATKFragment extends Fragment {
     private RecyclerView PendingAttacksListRecyclerView;
     private TextView NoItemTextView;
     private CustomPendingAttacksAdapter adapter;
+    Date nowToRemove;
 
     /*
         This to initialize the layout that will be used along with the recycler view to show the attacks
@@ -60,6 +61,7 @@ public class ATKFragment extends Fragment {
         adapter = new CustomPendingAttacksAdapter(getContext(), globalVars.getPendingAttacksArrayList());
         PendingAttacksListRecyclerView.setAdapter(adapter);
         PendingAttacksListRecyclerView.setLayoutManager(layoutManager);
+        nowToRemove = new Date();
     }
 
     public ATKFragment() {
@@ -104,6 +106,7 @@ public class ATKFragment extends Fragment {
 
     /**
      * This method is used To attach the fragment to the layout
+     *
      * @param context
      */
     @Override
@@ -132,7 +135,7 @@ public class ATKFragment extends Fragment {
     }
 
     /**
-    *This adapter is used to link the array of information to the list
+     * This adapter is used to link the array of information to the list
      */
     public class CustomPendingAttacksAdapter extends RecyclerView.Adapter<CustomPendingAttacksAdapter.ViewHolder> {
         Context context;
@@ -145,7 +148,8 @@ public class ATKFragment extends Fragment {
 
 
         /**
-         *   This method is to inflate the list with a customized row and setup the long click listener for deleting
+         * This method is to inflate the list with a customized row and setup the long click listener for deleting
+         *
          * @param parent
          * @param viewType
          * @return
@@ -191,10 +195,10 @@ public class ATKFragment extends Fragment {
         }
 
 
-
         /**
-         *This method is used to fill the proper information for every row in the list and calculate the time needed and to allow the
-         *user to go the victim's device if the bypass was successful
+         * This method is used to fill the proper information for every row in the list and calculate the time needed and to allow the
+         * user to go the victim's device if the bypass was successful
+         *
          * @param holder
          * @param position
          */
@@ -213,7 +217,7 @@ public class ATKFragment extends Fragment {
                 holder.progressBar.setProgress(100);
                 holder.Complete.setVisibility(View.VISIBLE);
                 holder.Time.setVisibility(View.GONE);
-                if (globalVars.isLocal()) {
+                if (globalVars.isLocal() &&  arr.get(position).getToolUsed().equals("Bypass")) {
                     holder.view.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
@@ -240,6 +244,8 @@ public class ATKFragment extends Fragment {
                     public void run() {
                         try {
                             Date now = new Date();
+                            now.setTime(nowToRemove.getTime() + 9000);
+                            nowToRemove = now;
                             Date started = sdf.parse(data.getStartTime());
                             Date ends = sdf.parse(data.getEndTime());
                             long[] TimeDifference = TimeDifference(now, ends);
@@ -251,6 +257,9 @@ public class ATKFragment extends Fragment {
                                     str += TimeDifference[j] + " " + strings[j];
                                     if (TimeDifference[j] > 1) {
                                         str += "s";
+                                    }
+                                    if (TimeDifference[j] == 0) {
+                                        str+= TimeDifference[j] + " " + strings[j];
                                     }
                                     str += " ";
                                 }
@@ -293,7 +302,7 @@ public class ATKFragment extends Fragment {
                                     });
                                 }
                             } else {
-                                holder.handler.postDelayed(this, 1000);
+                                holder.handler.postDelayed(this, 10);
                             }
                         } catch (ParseException e) {
                             Toast.makeText(context, "ERROR", Toast.LENGTH_SHORT).show();
@@ -309,6 +318,7 @@ public class ATKFragment extends Fragment {
 
         /**
          * This method is used calculate the time difference
+         *
          * @param now
          * @param ends
          * @return

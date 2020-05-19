@@ -124,6 +124,7 @@ public class SingleEmailActivity extends AppCompatActivity {
         hm.put("UserID", email.getPhisherID());
         globalVars.getUserDocument(globalVars.getUserID()).collection("BankAccountAccess").add(hm);
         globalVars.getUserDocument(email.getPhisherID()).update("AchievementsData.Phishing_Used", FieldValue.increment(1));
+        globalVars.getUserDocument(email.getPhisherID()).update("AchievementsData.Bank_Access_Users", FieldValue.increment(1));
         deleteEmail();
     }
 
