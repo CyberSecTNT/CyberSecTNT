@@ -49,7 +49,6 @@ public class ATKFragment extends Fragment {
     private RecyclerView PendingAttacksListRecyclerView;
     private TextView NoItemTextView;
     private CustomPendingAttacksAdapter adapter;
-    Date nowToRemove;
 
     /*
         This to initialize the layout that will be used along with the recycler view to show the attacks
@@ -61,7 +60,6 @@ public class ATKFragment extends Fragment {
         adapter = new CustomPendingAttacksAdapter(getContext(), globalVars.getPendingAttacksArrayList());
         PendingAttacksListRecyclerView.setAdapter(adapter);
         PendingAttacksListRecyclerView.setLayoutManager(layoutManager);
-        nowToRemove = new Date();
     }
 
     public ATKFragment() {
@@ -244,8 +242,6 @@ public class ATKFragment extends Fragment {
                     public void run() {
                         try {
                             Date now = new Date();
-                            now.setTime(nowToRemove.getTime() + 9000);
-                            nowToRemove = now;
                             Date started = sdf.parse(data.getStartTime());
                             Date ends = sdf.parse(data.getEndTime());
                             long[] TimeDifference = TimeDifference(now, ends);

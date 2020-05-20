@@ -52,4 +52,8 @@ Android development / Testing / Database / Video editing
 <h3> AbdulHameed Salama - Website Developer</h3>
 S00042531@auk.edu.kw<br>
 Website development & Application testing
-
+<br>
+<h2>Team</h2>
+<h3> Nooh Bany Muhammad </h3>
+nmuhammad@auk.edu.kw<br>
+Project Advisor

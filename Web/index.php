@@ -1,3 +1,24 @@
+<?php
+error_reporting(0);
+if(isset($_POST['submit'])){
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+    $sub=$_POST['sub'];
+    $msg=$_POST['message'];
+    
+    $to='info@cybersectnt.com';
+    $subject="Form Submission: ".$sub;
+    $subject2="Copy of your form submission".$sub;
+    $message="Name: ".$name."\n\n"."Wrote the following message:\n\n".$msg;
+    $message2="Here is a copy of your submission:\n\n"."Name: ".$name."\n\n"."Message:\n\n".$msg;
+    $headers="From:".$email;
+    $headers2="From:".$to;
+    
+    mail($to,$subject,$message,$headers);
+    mail($email,$subject2,$message2,$headers2);
+    echo"<h2>Mail Sent! Thank you ".$name." we will contact you shortly.</h2>";
+}
+?>
 <!DOCTYPE html>
 <html lang="en-US">
 
@@ -106,6 +127,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link anchor" href="#git_in_touch">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link anchor" href="#download_app">Download</a>
                         </li>
                     </ul>
                 </div>
@@ -455,9 +479,9 @@
                     <div class="space-50"></div>
                 </div>
                 <div class="col-md-6 offset-md-3" data-aos="fade-up">
-                    <div class="video" style="background-image: url('https://via.placeholder.com/699x351')">
+                    <div class="video" style="background-image: url('http://cybersectnt.com/assets/img/banner2.png')">
                         <img src="assets/img/mobile-4-4.png" class="img-fluid d-block mx-auto" alt="">
-                        <a href="http://www.youtube.com/watch?v=XSGBVzeBUbk" data-lity></a>
+                        <a href="https://www.youtube.com/watch?v=1XQQStiMjAQ&feature=youtu.be" data-lity></a>
                     </div>
                 </div>
             </div>
@@ -549,138 +573,7 @@
     <!-- End Screenshots -->
 
     <!-- Start Clients Testimonial -->
-    <section id="testimonial" class="clients-testimonial padding-100">
-        <div class="container">
-            <div class="row">
-                <div class="text-center col-12 section-title" data-aos="fade-zoom-in">
-                    <h3>Students
-                        <span> Testimonial</span>
-                    </h3>
-                    <div class="space-25"></div>
-                    <p>After showing the application to some students and friends, we have recorded there reviews
-                    and got it directly to your door</p>
-                    <div class="space-50"></div>
-                </div>
-                <div class="col-12">
-                    <div class="testimonial-slider" data-aos="fade-up">
-                        <div class="item">
-                            <div class="client-testimonial">
-                                <p>
-                                    Completely build backend ROI whereas cross-media metrics. Collaboratively deploy
-                                    customer directed web-readiness via global testing procedures. Appropriately
-                                    reinvent distributed innovation.
-                                </p>
-                            </div>
-                            <div class="client-info d-flex align-items-center">
-                                <figure>
-                                    <img src="https://via.placeholder.com/60x60" class="img-fluid" alt="">
-                                </figure>
-                                <div>
-                                    <h3>Mohamed Kamel</h3>
-                                    <h6>CEO - Company Name</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-testimonial">
-                                <p>
-                                    If you can design one thing you can design everything with Front. Just believe it.
-                                    Collaboratively repurpose performance based e-commerce without cost. It's beautiful
-                                    and the coding is done quickly and seamlessly.
-                                </p>
-                            </div>
-                            <div class="client-info d-flex align-items-center">
-                                <figure>
-                                    <img src="https://via.placeholder.com/60x60" class="img-fluid" alt="">
-                                </figure>
-                                <div>
-                                    <h3>Mohamed Kamel</h3>
-                                    <h6>CEO - Company Name</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-testimonial">
-                                <p>
-                                    If you can design one thing you can design everything with Front. Just believe it.
-                                    Collaboratively repurpose performance based e-commerce without cost. It's beautiful
-                                    and the coding is done quickly and seamlessly.
-                                </p>
-                            </div>
-                            <div class="client-info d-flex align-items-center">
-                                <figure>
-                                    <img src="https://via.placeholder.com/60x60" class="img-fluid" alt="">
-                                </figure>
-                                <div>
-                                    <h3>Mohamed Kamel</h3>
-                                    <h6>CEO - Company Name</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-testimonial">
-                                <p>
-                                    Completely build backend ROI whereas cross-media metrics. Collaboratively deploy
-                                    customer directed web-readiness via global testing procedures. Appropriately
-                                    reinvent distributed innovation.
-                                </p>
-                            </div>
-                            <div class="client-info d-flex align-items-center">
-                                <figure>
-                                    <img src="https://via.placeholder.com/60x60" class="img-fluid" alt="">
-                                </figure>
-                                <div>
-                                    <h3>Mohamed Kamel</h3>
-                                    <h6>CEO - Company Name</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-testimonial">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fugit dignissimos
-                                    nihil deleniti sunt enim cupiditate quia
-                                    officia suscipit est saepe atque expedita, natus numquam animi inventore harum
-                                    esse
-                                    ut.
-                                </p>
-                            </div>
-                            <div class="client-info d-flex align-items-center">
-                                <figure>
-                                    <img src="https://via.placeholder.com/60x60" class="img-fluid" alt="">
-                                </figure>
-                                <div>
-                                    <h3>Mohamed Kamel</h3>
-                                    <h6>CEO - Company Name</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="client-testimonial">
-                                <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit fugit dignissimos
-                                    nihil deleniti sunt enim cupiditate quia
-                                    officia suscipit est saepe atque expedita, natus numquam animi inventore harum
-                                    esse
-                                    ut.
-                                </p>
-                            </div>
-                            <div class="client-info d-flex align-items-center">
-                                <figure>
-                                    <img src="https://via.placeholder.com/60x60" class="img-fluid" alt="">
-                                </figure>
-                                <div>
-                                    <h3>Mohamed Kamel</h3>
-                                    <h6>CEO - Company Name</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
+ 
     <!-- End Clients Testimonial  -->
 
     <!-- Start Fun Facts -->
@@ -748,6 +641,31 @@
                 <div class="col-12">
                     <div class="team-slider" data-aos="fade-up">
                         <div class="item person text-center">
+                            <img src="assets/img/pnooh.jpg" class="img-fluid d-block mx-auto" alt="">
+                            <div class="space-20"></div>
+                            <h3>Dr.Nooh Bany Muhammad</h3>
+                            <div class="space-20"></div>
+                            <h5>Project Manager</h5>
+                            <div class="space-20"></div>
+                            <p>Areas of expertise:</p>
+                            <li style="font-size: 10px;">Computer Security</li>
+                            <li style="font-size: 10px;">Cyber Security</li>
+                            <li style="font-size: 13px;">Business analysis and process redesign</li>
+                            <li style="font-size: 13px;">IT Implementations & Integration</li>
+                            <li style="font-size: 13px;">Database Design</li>
+                            <li style="font-size: 13px;">Software Engineering</li>
+                            <br>
+                            <ul>
+                                <li>
+                                    <a href="https://www.linkedin.com/in/nooh-bany-muhammad-a12aa2a8/" target="_Blank">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="team-slider" data-aos="fade-up">
+                        <div class="item person text-center">
                             <img src="assets/img/hameed.jpg" class="img-fluid d-block mx-auto" alt="">
                             <div class="space-20"></div>
                             <h3>AbdulHameed Salama</h3>
@@ -796,17 +714,17 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="https://twitter.com/azikar24">
                                         <i class="fab fa-twitter"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="www.linkedin.com/in/abdulaziz-karam-02b78b22">
                                         <i class="fab fa-linkedin-in"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="https://www.instagram.com/azikar24/">
                                         <i class="fab fa-instagram"></i>
                                     </a>
                                 </li>
@@ -1043,35 +961,35 @@
                     <div class="space-50"></div>
                 </div>
             </div>
-            <form data-aos="fade-up">
+            <form action="" id="form-box" method="POST" data-aos="fade-up">
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Enter Your Name">
+                            <input type="text" name="name" class="form-control" placeholder="Enter Your Name" required>
                             <span class="focus-border"></span>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Enter Your Email">
+                            <input type="email" name="email" class="form-control" placeholder="Enter Your Email" required>
                             <span class="focus-border"></span>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Enter Your Subject">
+                            <input type="text" name="sub" class="form-control" placeholder="Enter Your Subject" required>
                             <span class="focus-border"></span>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="form-group">
-                            <textarea class="form-control" rows="4" placeholder="Enter Your Message"></textarea>
+                            <textarea class="form-control" name="message" id="msg-box" rows="4" placeholder="Enter Your Message" required></textarea>
                             <span class="focus-border"></span>
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="space-25"></div>
-                        <button type="submit" class="btn btn-primary shadow btn-colord btn-theme"><span>Send
+                        <button type="submit" name="submit" class="btn btn-primary shadow btn-colord btn-theme"><span>Send
                                 Message</span></button>
                     </div>
                 </div>
@@ -1094,7 +1012,6 @@
                     <div class="info-box" data-aos="fade-left" data-aos-delay="1200">
                         <span class="lnr lnr-envelope"></span>
                         <a href="mailto:info@cybersectnt.com">info@cybersectnt.com</a>
-                        <a href="mailto:sales@cybersectnt.com">sales@cybersectnt.com</a>
                     </div>
                 </div>
             </div>
@@ -1105,7 +1022,7 @@
     <!-- Start  Map -->
     <section class="map">
         <iframe
-            src="https://www.google.com/maps/place/American+University+of+Kuwait/@29.344398,48.0827996,19z/data=!4m12!1m6!3m5!1s0x3fcf7626163f442d:0x1a332c240e88c341!2sAmerican+University+of+Kuwait!8m2!3d29.3443337!4d48.0833387!3m4!1s0x3fcf7626163f442d:0x1a332c240e88c341!8m2!3d29.3443337!4d48.0833387"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3477.8859388944643!2d48.081144650885285!3d29.344338358170496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf7626163f442d%3A0x1a332c240e88c341!2sAmerican%20University%20of%20Kuwait!5e0!3m2!1sen!2seg!4v1589892552654!5m2!1sen!2seg"
             style="border:0" allowfullscreen></iframe>
     </section>
     <!-- End  Map  -->
@@ -1128,18 +1045,22 @@
                         <div class="widget">
                             <h6>Quick Links</h6>
                             <ul>
-                                <li>
-                                    <a href="#">Home</a>
-                                </li>
-                                <li>
-                                    <a href="#">About Us</a>
-                                </li>
-                                <li>
-                                    <a href="#">Services</a>
-                                </li>
-                                <li>
-                                    <a href="#">Products</a>
-                                </li>
+                                <li class="nav-item">
+                            <a class="nav-link anchor active" href="#slide">Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link anchor" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link anchor" href="#main_features">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link anchor" href="#screenshots">Screenshots</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link anchor" href="#team">Team</a>
+                        </li>
                             </ul>
                         </div>
                     </div>
