@@ -41,6 +41,7 @@ public class ToolsFragment extends Fragment {
 
     /**
      * Initializing the view and starting it
+     *
      * @param inflater
      * @param container
      * @param savedInstanceState
@@ -122,6 +123,7 @@ public class ToolsFragment extends Fragment {
 
     /**
      * Attaching the listener to the list
+     *
      * @param context
      */
     @Override
@@ -172,6 +174,7 @@ public class ToolsFragment extends Fragment {
 
         /**
          * Attaching a custom row to the list
+         *
          * @param parent
          * @param viewType
          * @return
@@ -186,6 +189,7 @@ public class ToolsFragment extends Fragment {
 
         /**
          * Attaching the information to the list and enabling onClick for the items to show an alert dialog
+         *
          * @param holder
          * @param position
          */
@@ -209,7 +213,7 @@ public class ToolsFragment extends Fragment {
                 holder.UpgradeBtn.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        upgradeTool(position);
+                        upgradeTool(position,holder.UpgradeBtn);
                     }
                 });
             } else {
@@ -240,7 +244,7 @@ public class ToolsFragment extends Fragment {
                         UpgradeToolButton.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                upgradeTool(position);
+                                upgradeTool(position, UpgradeToolButton);
                                 alertDialog.cancel();
                             }
                         });
@@ -260,9 +264,11 @@ public class ToolsFragment extends Fragment {
 
         /**
          * This method allows the user to upgrade their tool
+         *
          * @param position
          */
-        private void upgradeTool(int position) {
+        private void upgradeTool(int position, View view) {
+            view.setEnabled(false);
             if (globalVars.getUserBankAccountPending() >= arr.get(position).getPrice()) {
                 globalVars.getUserDocument(globalVars.getUserID()).update("BankAccount.Pending", FieldValue.increment(-1 * arr.get(position).getPrice())).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

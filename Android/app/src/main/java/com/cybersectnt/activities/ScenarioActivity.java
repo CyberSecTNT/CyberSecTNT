@@ -164,6 +164,7 @@ public class ScenarioActivity extends AppCompatActivity implements TypeWriter.Da
                 typeWriter.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        v.setClickable(false);
                         checkAnswer(index - 1);
                     }
                 });

@@ -471,6 +471,7 @@ public class MainActivity extends AppCompatActivity
         if (globalVars.isLocal()) {
             startActivity(new Intent(getBaseContext(), MailBoxActivity.class));
         } else {
+            view.setClickable(false);
             final long MySpywareLevel = globalVars.getMyToolsLevel().get("SpywareLevel");
             long TargetFirewallLevel = globalVars.getTargetToolsLevel().get("FirewallLevel");
             double TimeCalcInMinutes;

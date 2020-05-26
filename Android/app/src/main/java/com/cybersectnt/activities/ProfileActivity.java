@@ -30,6 +30,8 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.firestore.SetOptions;
 import com.squareup.picasso.Picasso;
 
@@ -74,8 +76,9 @@ public class ProfileActivity extends AppCompatActivity {
 
     /**
      * This method will check if a string is null or not
-     * @input user id
+     *
      * @return boolean
+     * @input user id
      */
     private String getNonNull(String str) {
         try {
@@ -84,6 +87,7 @@ public class ProfileActivity extends AppCompatActivity {
             return "0";
         }
     }
+
     /**
      * This method is responsible for fetching the data from the database. which is the query to calculate the score
      */
@@ -146,11 +150,27 @@ public class ProfileActivity extends AppCompatActivity {
         PhishingUsedTextView = findViewById(R.id.TextViewToShowPhishingUsed);
     }
 
+    public boolean CheckUsernames() {
+        final boolean[] found = {false};
+        globalVars.getUsersCollection().get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                for (DocumentSnapshot documentSnapshot : task.getResult()) {
+                    String username = documentSnapshot.get("UserName") + "";
+                    if (username.equals(UsernameEditText)) {
+                        found[0] = true;
+                    }
+                }
+            }
+        });
+        return found[0];
+    }
 
     /**
      * This method allows the user to change their password, email and their user name
-     * @input user's changed info
+     *
      * @return update the info in the database
+     * @input user's changed info
      */
 
     public void ChangeInformationOrSave() {
@@ -181,7 +201,7 @@ public class ProfileActivity extends AppCompatActivity {
                                         }
                                     });
                                 }
-                                if (!globalVars.getTextInputLayoutString(UsernameEditText).equals(globalVars.getUserName())) {
+                                if (!globalVars.getTextInputLayoutString(UsernameEditText).equals(globalVars.getUserName()) && (!CheckUsernames())) {
                                     HashMap<String, String> hm = new HashMap<>();
                                     hm.put("UserName", globalVars.getTextInputLayoutString(UsernameEditText));
                                     globalVars.getUserDocument(globalVars.getUserID()).set(hm, SetOptions.merge());
@@ -245,6 +265,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         /**
          * This method is part of the adapter to check the proper number of badges
+         *
          * @return number of badges
          */
 
